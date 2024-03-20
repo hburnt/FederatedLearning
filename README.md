@@ -84,7 +84,13 @@ train_loader = [torch.utils.data.DataLoader(x, batch_size=batch_size, shuffle=Tr
 This loops through the sorted dataset which selects groups of numbers [0, 1], [2, 3], [4, 5], [6,7], and [8, 9]
 ## Results
 
-Describe the results or outcomes of the project. Include any findings, insights, or conclusions obtained from the work.
+The model was evealuated in 4 different cases using a mini-batch size (B=10) of 10, and 5 local epochs (E=5). The client size being 100 where 10 clients are selected each round (C=0.1). In the IID case a learning rate of $\eta = 0.215$ was used.
+In the non-IID case a learning rate of $\eta = 0.1$ was used as these learning rates were said to be "optimal". The amount of rounds when traning and evaluating the IID and non-IID cases. The results of the IID case match those found in the [reasearch paper](https://arxiv.org/abs/1602.05629).
+
+### IID Loss
+![Evaluation Loss](images/IIDEvaluationLosses.png)
+### IID Accuracy
+![Model Accuracy over Rounds](images/IIDAccuracy.png) 
 
 ## Conclusion
 
