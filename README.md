@@ -29,7 +29,7 @@ As stated in the paper the model used was a convolutional neural network that ha
 The algorithm used to replicated the results can be described by the following mathmatical expression as stated in the [paper](https://arxiv.org/abs/1602.05629).
 
 **Server executes:**
-```math
+```latex
 1. Initialize \( w_0 \)
 2. for each round \( t = 1, 2, ... \) do
    - \( m \leftarrow \max(C \cdot K, 1) \)
