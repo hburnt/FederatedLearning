@@ -6,19 +6,14 @@ Briefly describe the project, its purpose, and its key features. Include any rel
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
+- [Motivation](#motivation)
 - [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
+- [Conclusion](#conclusion)
+- [References](#references)
 
-## Installation
+## Motivation
 
-Provide instructions on how to install and set up the project, including any dependencies that need to be installed.
-
-## Usage
-
-Explain how to use the project, including any important commands or steps. Provide examples if necessary.
+The motivation of this project is to replicate the results found in the paper [Communication-Efficient Learning of Deep Networks from Decentralized data](https://arxiv.org/abs/1602.05629)
 
 ## Results
 
