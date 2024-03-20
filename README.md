@@ -23,7 +23,7 @@ protocols. These include random schduling, and a form of age based scheduling.
 As stated in the paper the model used was a convolutional neural network that had two 5x5 convolutional layers first with a channel size of 32 and then 64, both followed with a 2x2 max pooling, followed by a dense layer of 512 units with ReLU activations. 
 
 <center>
-![Model Structure](images/CNNStructure.png)
+  ![Model Structure](images/CNNStructure.png)
 </center>
 
 ## The Dataset
