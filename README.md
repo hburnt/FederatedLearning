@@ -138,5 +138,9 @@ It can be seen that even though the ABS takes longer to get to a loss it is a "s
 In the non-IID case the accuracy has a lower variance and a smoother accuracy curve. This comes at a cost of having to train the model over a larger amount of rounds.
 
 ## Conclusion
+In conclusion the results from the research were able to be replicated. Both the IID and Non-IID cases were tested using different schedulers (Random and Age Based). In the Non-IID case the model was able to reach a conclusion faster by picking clients at random. When using an age based scheduler the gobal model still reaches a similar accuracy as in the random case. The accuracy curve is seen to be smoother using the ABS as opposed to the random scheduler.
 
 ## References
+[Communication-Efficient Learning of Deep Networks from Decentralized Data](https://arxiv.org/abs/1602.05629)
+[Federated Learning Using Pytorch](https://github.com/yonetaniryo/federated_learning_pytorch/blob/master/FL_pytorch.ipynb)
+[Age-Based Scheduling Policy for Federated Learning in Mobile Edge Networks](https://arxiv.org/abs/1910.14648)
