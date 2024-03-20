@@ -66,8 +66,19 @@ train_loader = [torch.utils.data.DataLoader(x, batch_size=batch_size, shuffle=Tr
 ```
 ### Non-Independent & Identically Distributed Case
 
-In the non IID case each client would only get examples of two numbers
-In order to simulate the 
+In the non IID case each client would only get examples of two numbers so each client will not have examples of the other 8 numbers in the dataset
+In order to simulate this in python the following line of code was used to split up the dataset giving each client their own dataloader.
+
+```python
+traindata = datasets.MNIST('./data', train=True, download=True, transform=transform)
+target_labels = torch.stack([traindata.targets == i for i in range(10)])
+target_labels_split = []
+for i in range(5):
+    target_labels_split += torch.split(torch.where(target_labels[(2 * i):(2 * (i + 1))].sum(0))[0], int(60000 / num_clients))
+    
+traindata_split = [torch.utils.data.Subset(traindata, tl) for tl in target_labels_split]
+train_loader = [torch.utils.data.DataLoader(x, batch_size=batch_size, shuffle=True) for x in traindata_split]
+```
 ## Results
 
 Describe the results or outcomes of the project. Include any findings, insights, or conclusions obtained from the work.
