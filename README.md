@@ -123,7 +123,19 @@ client_idx = np.random.choice(num_clients, size=num_selected, replace=False, p=p
     # Client update
     loss = 0
 ```
+### Evaluation and Training Losses
 
+For this section the models were trained over less rounds as they come to a conclusion in around 250 to 400 rounds of training. The following loss graph compares the IID case comparing the ABS and random scheduling.
+
+![ABS-Random-Losses-IID-Case](images/EvaluationAndTrainingLoss.png)
+
+It can be seen that even though the ABS takes longer to get to a loss it is a "smoother" graph. This can be seen even more when comparing the accuracy of the non-IID and IID cases.
+
+### IID and Non-IID Accuracy
+
+![IID-nonIID-ABS-Random-Acc](images/Accuracies.png)
+
+In the non-IID case the accuracy has a lower variance and a smoother accuracy curve. This comes at a cost of having to train the model over a larger amount of rounds.
 
 ## Conclusion
 
