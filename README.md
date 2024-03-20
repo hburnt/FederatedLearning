@@ -16,7 +16,7 @@ Briefly describe the project, its purpose, and its key features. Include any rel
 
 ## Motivation
 
-The motivation of this project is to replicate the results found in the paper [Communication-Efficient Learning of Deep Networks from Decentralized data](https://arxiv.org/abs/1602.05629). The results were then compared using different scheduling
+The motivation of this project is to replicate the results found in the paper [Communication-Efficient Learning of Deep Networks from Decentralized Data](https://arxiv.org/abs/1602.05629). The results were then compared using different scheduling
 protocols. These include random schduling, and a form of age based scheduling.
 
 ## The Model
@@ -89,8 +89,41 @@ In the non-IID case a learning rate of $\eta = 0.1$ was used as these learning r
 
 ### IID Loss
 ![Evaluation Loss](images/IIDEvaluationLosses.png)
+
 ### IID Accuracy
 ![Model Accuracy over Rounds](images/IIDAccuracy.png) 
+
+### Non-IID Accuracy
+![Non-IID Accuracy over Rounds](images/Non-IID-Acc.png)
+
+In the IID case it can be concluded that the model comes to a stable accuracy over each round and "stabilizes" after 600 rounds. In the non-IID case the model accuracy has a much larger variance but seems to come to a similar accuracy seen in the the IID case.
+
+### Comparing Schedulers
+
+When referring to a random scheduler the selection of clients is completely random as defined in the following code snippet:
+
+```python
+client_idx = np.random.permutation(num_clients)[:num_selected]
+    # client update
+    loss = 0
+    # Go through the selected clients
+    for i in range(num_selected):
+        loss += client_update(client_models[i], opt[i], train_loader[client_idx[i]], epochs=epochs)
+```
+
+This selects and trains each client at random.
+
+When using an age based scheduler (ABS) each client is still chosen at random but the age of each client is kept track of. The clients that are older are given a larger probability of being selected to be used for a round of training. Even though the clients are still selected at random, there is a bias to select clients that have an older age. This is done in the following code snippet:
+
+```python
+client_idx = np.random.choice(num_clients, size=num_selected, replace=False, p=probabilities)
+    # Update client age
+    client_age += 1
+    client_age[client_idx] = 0  # Reset age for selected clients
+    # Client update
+    loss = 0
+```
+
 
 ## Conclusion
 
