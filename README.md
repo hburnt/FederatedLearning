@@ -8,6 +8,7 @@ Briefly describe the project, its purpose, and its key features. Include any rel
 
 - [Motivation](#motivation)
 - [The Model](#model)
+- [Implimented Algorithm](#algorithm)
 - [The Dataset](#dataset)
 - [Results](#results)
 - [Conclusion](#conclusion)
@@ -23,6 +24,15 @@ protocols. These include random schduling, and a form of age based scheduling.
 As stated in the paper the model used was a convolutional neural network that had two 5x5 convolutional layers first with a channel size of 32 and then 64, both followed with a 2x2 max pooling, followed by a dense layer of 512 units with ReLU activations. 
   
   ![Model Structure](images/CNNStructure.png)
+
+## Implimented Algorithm
+The algorithm used to replicated the results can be described by the following mathmatical expression as stated in the [paper](https://arxiv.org/abs/1602.05629).
+
+**Algorithm 1: FederatedAveraging**
+
+The K clients are indexed by k; B is the local minibatch size, E is the number of local epochs, and η is the learning rate.
+
+**Server executes:**
 
 ## The Dataset
 
