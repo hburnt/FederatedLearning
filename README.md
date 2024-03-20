@@ -7,6 +7,7 @@ Briefly describe the project, its purpose, and its key features. Include any rel
 ## Table of Contents
 
 - [Motivation](#motivation)
+- [The Model](#model)
 - [The Dataset](#dataset)
 - [Results](#results)
 - [Conclusion](#conclusion)
@@ -15,7 +16,13 @@ Briefly describe the project, its purpose, and its key features. Include any rel
 ## Motivation
 
 The motivation of this project is to replicate the results found in the paper [Communication-Efficient Learning of Deep Networks from Decentralized data](https://arxiv.org/abs/1602.05629). The results were then compared using different scheduling
-protocols. These include random schduling, and a form of age based scheduling. 
+protocols. These include random schduling, and a form of age based scheduling.
+
+## The Model
+
+As stated in the paper the model used was a convolutional neural network that had two 5x5 convolutional layers first with a channel size of 32 and then 64, both followed with a 2x2 max pooling, followed by a dense layer of 512 units with ReLU activations. 
+
+![Model Structure](images/CNNStructure.png)
 
 ## The Dataset
 
@@ -26,7 +33,7 @@ clients. This gives each client 600 samples to train on. This allows each client
 
 ### Non-Independent & Identically Distributed Case
 
-
+In order to simulate the 
 ## Results
 
 Describe the results or outcomes of the project. Include any findings, insights, or conclusions obtained from the work.
