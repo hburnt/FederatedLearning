@@ -9,7 +9,7 @@ Briefly describe the project, its purpose, and its key features. Include any rel
 - [Motivation](#motivation)
 - [The Model](#the-model)
 - [Implimented Algorithm](#implimented-algorithm)
-- [The Dataset](#the_dataset)
+- [The Dataset](#the-dataset)
 - [Results](#results)
 - [Conclusion](#conclusion)
 - [References](#references)
