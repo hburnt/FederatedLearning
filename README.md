@@ -36,7 +36,7 @@ This was achieved by the following line of python code:
 '''python
 traindata_split = torch.utils.data.random_split(traindata, [int(traindata.data.shape[0] / num_clients) for _ in range(num_clients)])
 train_loader = [torch.utils.data.DataLoader(x, batch_size=batch_size, shuffle=True) for x in traindata_split]
-  
+```
 ### Non-Independent & Identically Distributed Case
 
 In the non IID case each client would only get examples of two numbers
