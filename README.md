@@ -53,6 +53,8 @@ The $K$ clients are indexed by $k$; $B$ is the local minibatch size, $E$ is the 
 
 ## The Dataset
 
+It should be noted that the training data in the MNIST dataset is used only by the clients and the test data is used to evaluate the global model after each round.
+
 ### Independent & Identically Distributed Case
 
 The results that were replicated were done using the MNIST dataset in two different cases. As described in the paper the IID case calls for splitting the dataset up by first shuffling the data and then splitting it up evenly to the 100
@@ -79,6 +81,7 @@ for i in range(5):
 traindata_split = [torch.utils.data.Subset(traindata, tl) for tl in target_labels_split]
 train_loader = [torch.utils.data.DataLoader(x, batch_size=batch_size, shuffle=True) for x in traindata_split]
 ```
+This loops through the sorted dataset which selects groups of numbers [0, 1], [2, 3], [4, 5], [6,7], and [8, 9]
 ## Results
 
 Describe the results or outcomes of the project. Include any findings, insights, or conclusions obtained from the work.
