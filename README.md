@@ -7,9 +7,9 @@ Briefly describe the project, its purpose, and its key features. Include any rel
 ## Table of Contents
 
 - [Motivation](#motivation)
-- [The Model](#model)
-- [Implimented Algorithm](#algorithm)
-- [The Dataset](#dataset)
+- [The Model](#the_model)
+- [Implimented Algorithm](#implimented_algorithm)
+- [The Dataset](#the_dataset)
 - [Results](#results)
 - [Conclusion](#conclusion)
 - [References](#references)
