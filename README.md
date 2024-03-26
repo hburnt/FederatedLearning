@@ -1,5 +1,5 @@
-# Project Name
-
+# Federated Averaging Algorothim Implimentation
+GitHub: https://github.com/hburnt/FederatedLearning/tree/main
 ## Description
 
 Briefly describe the project, its purpose, and its key features. Include any relevant context or background information.
