@@ -14,7 +14,7 @@ Briefly describe the project, its purpose, and its key features. Include any rel
 - [Conclusion](#conclusion)
 - [References](#references)
 - [CIFAR-10 Dataset](#cifar-10-dataset)
-
+- [CIFAR-10 Conclusion](#cifar-10-conclusion)
 ## Motivation
 
 The motivation of this project is to replicate the results found in the paper [Communication-Efficient Learning of Deep Networks from Decentralized Data](https://arxiv.org/abs/1602.05629). The results were then compared using different scheduling
@@ -206,6 +206,8 @@ Here is the network architecture of the two different CNN's:
         x = self.fc2(x)
         return x
 ```
+====================================================================================
+====================================================================================
 ### Client Selection of 10 Losses
 
 Here are the loss results for the different optimizers, networks with the new dataset 10 clients per round::
@@ -230,8 +232,8 @@ Here are the accuracy results for the different optimizers, networks with the ne
 
 ![ABS-Random_10_Small_L](images/ABS_Random_10_Small_Acc.png)
 
-==============================================================================================
-
+====================================================================================
+====================================================================================
 ### Client Selection of 5 Losses
 
 Here are the loss results for the different optimizers, networks with the new dataset only choosing 5 clients per round:
@@ -256,5 +258,10 @@ Here are the accuracy results for the different optimizers, networks with the ne
 
 ![ABS-Random_5_Small_L](images/ABS_Random_5_Small_Acc.png)
 
+====================================================================================
+====================================================================================
+## CIFAR-10 Conclusion
 
+In some casses the age based scheduler ended up performing worse than the random scheduling of clients. Changing the optimizer did not chnage the outcome either.
+The network size did not play that much of a role when comparing the results to the "larger" network.
 
