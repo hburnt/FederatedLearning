@@ -13,6 +13,7 @@ Briefly describe the project, its purpose, and its key features. Include any rel
 - [Results](#results)
 - [Conclusion](#conclusion)
 - [References](#references)
+- [CIFAR-10 Dataset](#cifar-10-dataset)
 
 ## Motivation
 
@@ -146,3 +147,64 @@ In conclusion the results from the research were able to be replicated. Both the
 -[Federated Learning Using Pytorch](https://github.com/yonetaniryo/federated_learning_pytorch/blob/master/FL_pytorch.ipynb)
 
 -[Age-Based Scheduling Policy for Federated Learning in Mobile Edge Networks](https://arxiv.org/abs/1910.14648)
+
+## CIFAR-10 Dataset
+ Next the CIFAR-10 dataset was used to introduce more compexities into the network.
+ Two networks were tested along with two different optimizers, two different client selection amounts.
+ The two optimizers used were the SGD optimizer with a learning rate of 0.21 and the Adam optimizer with a learning rate of 0.0001.
+ Each model was trained over 300 rounds over 5 epochs for client training.
+ 
+### The Two CNN Models Used:
+Here is the network architecture of the two different CNN's:
+
+#### "Larger" CNN
+```python
+  # Define the CNN model
+  class CIFARCNN(nn.Module):
+      def __init__(self):
+          super(CIFARCNN, self).__init__()
+          self.conv1 = nn.Conv2d(3, 32, kernel_size=3, padding=1)
+          self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)
+          self.conv3 = nn.Conv2d(64, 64, kernel_size=3, padding=1)
+          self.pool = nn.MaxPool2d(2, 2)
+          self.flatten = nn.Flatten()
+          self.fc1 = nn.Linear(64 * 4 * 4, 64)  # Assuming input size after max pooling is 4x4 and output size of dense layer is 64
+          self.fc2 = nn.Linear(64, 10)
+          
+      def forward(self, x):
+          x = F.relu(self.conv1(x))  
+          x = self.pool(x)  
+          x = F.relu(self.conv2(x))  
+          x = self.pool(x)  
+          x = F.relu(self.conv3(x))  
+          x = self.pool(x)
+          x = self.flatten(x)  # Flatten the output
+          x = F.relu(self.fc1(x))  # Apply dense layer with relu activation
+          x = self.fc2(x)  # Apply final dense layer
+          return x
+```
+
+##### "Smaller" CNN
+
+```python
+  class SmallerCIFARCNN(nn.Module):
+    def __init__(self):
+        super(SmallerCIFARCNN, self).__init__()
+        self.conv1 = nn.Conv2d(3, 16, kernel_size=3, padding=1)
+        self.conv2 = nn.Conv2d(16, 32, kernel_size=3, padding=1)
+        self.pool = nn.MaxPool2d(2, 2)
+        self.fc1 = nn.Linear(32 * 8 * 8, 64)  # Adjust the input size accordingly
+        self.fc2 = nn.Linear(64, 10)
+        
+    def forward(self, x):
+        x = F.relu(self.conv1(x))  
+        x = self.pool(x)  
+        x = F.relu(self.conv2(x))  
+        x = self.pool(x)  
+        x = x.view(-1, 32 * 8 * 8)  # Adjust the shape accordingly
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
+```
+
+
