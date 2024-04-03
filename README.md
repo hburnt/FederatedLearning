@@ -230,7 +230,7 @@ Here are the accuracy results for the different optimizers, networks with the ne
 
 ![ABS-Random_10_Small_L](images/ABS_Random_10_Small_Acc.png)
 
-===================
+=============================================================================
 
 ### Client Selection of 5 Losses
 
