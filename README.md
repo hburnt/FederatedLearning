@@ -206,5 +206,55 @@ Here is the network architecture of the two different CNN's:
         x = self.fc2(x)
         return x
 ```
+### Client Selection of 10 Losses
+
+Here are the loss results for the different optimizers, networks with the new dataset 10 clients per round::
+
+#### "Larger" Network
+
+![ABS-Random_10_L](images/ABS_Random_10_L.png)
+
+#### "Smaller" Network
+
+![ABS-Random_10_Small_L](images/ABS_Random_10_Small_L.png)
+
+### Client Selection of 10 Accuracy
+
+Here are the accuracy results for the different optimizers, networks with the new dataset 10 clients per round::
+
+#### "Larger" Network
+
+![ABS-Random_10_L](images/ABS_Random_10_Acc.png)
+
+#### "Smaller" Network
+
+![ABS-Random_10_Small_L](images/ABS_Random_10_Small_Acc.png)
+
+===================
+
+### Client Selection of 5 Losses
+
+Here are the loss results for the different optimizers, networks with the new dataset only choosing 5 clients per round:
+
+#### "Larger" Network
+
+![ABS-Random_5_Small_L](images/ABS_Random_5_L.png)
+
+#### "Smaller" Network
+
+![ABS-Random_5_Small_L](images/ABS_Random_5_Small_L.png)
+
+### Client Selection of 5 Accuracy
+
+Here are the accuracy results for the different optimizers, networks with the new dataset 5 clients per round:
+
+#### "Larger" Network
+
+![ABS-Random_5_Small_L](images/ABS_Random_5_Acc.png)
+
+#### "Smaller" Network
+
+![ABS-Random_5_Small_L](images/ABS_Random_5_Small_Acc.png)
+
 
 
